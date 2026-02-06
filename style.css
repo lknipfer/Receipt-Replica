@@ -28,9 +28,6 @@ body {
   .dotted-line {
     border: none;
     border-top: 1px dashed black;
-    /* height: 2px;
-    background-size: 30px 1px;
-    transform: scaleX(4); */
   }
 
   .receipt-container {

@@ -1,0 +1,71 @@
+body {
+  font-family: monospace;
+  background-color: black;
+  color: black;
+  margin: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+
+  .receipt-container {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    color: black;
+    width: 350px;
+    background-color: white;
+  }
+
+  .dotted-line {
+    border: none;
+    border-top: 1px dashed black;
+    /* height: 2px;
+    background-size: 30px 1px;
+    transform: scaleX(4); */
+  }
+
+  .receipt-container {
+    padding: 100px 20px
+  }
+
+  hr.asterisk {
+    border: none;
+    text-align: center;
+  }
+
+  hr.asterisk::after {
+    content: "***********************************";
+    display: inline-block;
+    letter-spacing: 2px;
+
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+
+  h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  h3 {
+    padding: 0;
+    margin: 0;
+  }
+}

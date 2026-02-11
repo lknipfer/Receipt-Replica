@@ -6,11 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <title>Document</title>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 
 <body>
+  <div class="button-container">
+    <button onclick="printReceipt()">Print Receipt</button>
+    <button onclick="downloadReceipt()">Download Receipt</button>
+  </div>
   <div class="receipt-container">
-    <h1>Shake Shack</h1>
+    <img
+      src="./Shake-Shack-Emblem.png"
+      width={3840}
+      height={2160}
+      alt="Shake shack logo"
+    />
     <div class="header">
       <p class="text-right">12:49 PM</p>
       <p class="text-center">Check: 240235</p>
@@ -44,5 +54,21 @@
     <p>(636) 577-8136</p>
     <hr class="asterisk">
   </div>
+  <script type="text/javascript">
+    function downloadReceipt() {
+      const receiptContainer = document.querySelector('.receipt-container');
+      html2canvas(receiptContainer, {useCors: true, allowTaint: true}).then(canvas => {
+        canvas.toBlob((blob) => {
+          const link = document.createElement('a');
+          link.download = 'screenshot.png';
+          link.href = URL.createObjectURL(blob);
+          
+          link.click();
+          
+          URL.revokeObjectURL(link.href);
+        }, 'image/png', 0.95);
+      })
+    }
+  </script>
 </body>
 </html>
